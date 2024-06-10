@@ -10,9 +10,4 @@ class PagesController extends Controller
   {
     return view('dashboard');
   }
-
-  public function home()
-  {
-    return view('home');
-  }
 }

@@ -16,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Home
-Route::get('/', [PagesController::class, 'home'])->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
   // Dashboard
-  Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+  Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
   // Photos
   Route::resource('/photos', PhotoController::class)->parameters(['photos' => 'photos:slug']);
 });
