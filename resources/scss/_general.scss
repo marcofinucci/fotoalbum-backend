@@ -1,0 +1,17 @@
+html, body {
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+#app {
+  height: 100svh;
+  display: flex;
+}
+
+.my-logo {
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: .0625rem;
+  color: $primary;
+}

@@ -16,13 +16,9 @@
 </head>
 
 <body>
-  <div id="app" class="app-admin">
-    {{-- Sidebar --}}
-    <aside id="app-sidebar">
-      @include('partials.sidebar')
-    </aside>
-    {{-- Main --}}
+  <div id="app" class="app-guest">
     <main id="app-main">
+      <div class="my-logo">PHOTO ALBUM</div>
       @yield('content')
     </main>
   </div>

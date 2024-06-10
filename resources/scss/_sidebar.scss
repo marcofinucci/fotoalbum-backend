@@ -1,0 +1,58 @@
+#app-sidebar {
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  background-color: $body-secondary-bg-dark;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  
+  .nav {
+    .nav-link {
+      color: $body-color-dark;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      border-left: 4px solid transparent;
+    }
+
+    i {
+      margin-right: .75rem;
+      font-size: 1.125rem
+    }
+
+    .nav-link:hover, .nav-link:focus {
+      background-color: $body-tertiary-bg-dark;
+      border-left: 4px solid $primary;
+    }
+
+    .nav-link.active, .show > .nav-link {
+      color: $body-emphasis-color-dark;
+      background-color: $body-tertiary-bg-dark;
+      border-left: 4px solid $primary;
+    }
+  }
+
+  .my-nav-general {
+    margin-bottom: 4rem;
+    border-top: 1px solid $border-color-dark;
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .my-profile {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid $border-color-dark;
+  }
+
+  .my-nav-settings {
+    margin-top: 1rem;
+  }
+}
+
