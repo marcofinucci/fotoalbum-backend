@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::middleware(['auth', 'verified'])->group(function () {
   // Dashboard
   Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+  // Photos
+  Route::resource('/photos', PhotoController::class)->parameters(['photos' => 'photos:slug']);
 });
 
 Route::middleware('auth')->group(function () {
