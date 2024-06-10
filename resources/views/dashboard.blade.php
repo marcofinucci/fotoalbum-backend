@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container">
-  <h1 class="text-secondary mb-5">Dashboard</h1>
+  {{-- Title --}}
+  @include('partials.title', ['title' => 'Dashboard'])
+
+  {{-- TODO --}}
   <div class="row justify-content-center">
     <div class="col">
       <div class="card">

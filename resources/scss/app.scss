@@ -7,9 +7,11 @@
 // Customize some defaults
 $gray-800: #101010;
 $gray-900: #060606;
-$black:    #060606;
-$primary:  #6610f2;
+$black:    #000000;
+$primary:  #fd7e14;
+$link-color-dark: $primary;
 $font-family-sans-serif: 'Inter', sans-serif;
+$component-active-color: $black;
 
 
 // Required

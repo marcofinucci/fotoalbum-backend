@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
-  <h1 class="text-secondary mb-5">Nuova foto</h1>
+  {{-- Title --}}
+  @include('partials.title', ['title' => 'Nuova foto'])
 </div>
 @endsection

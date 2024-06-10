@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  min-width: 300px;
   
   .nav {
     .nav-link {
@@ -21,14 +22,12 @@
     }
 
     .nav-link:hover, .nav-link:focus {
-      background-color: $body-tertiary-bg-dark;
-      border-left: 4px solid $primary;
+      border-left-color: $primary;
     }
 
     .nav-link.active, .show > .nav-link {
       color: $body-emphasis-color-dark;
-      background-color: $body-tertiary-bg-dark;
-      border-left: 4px solid $primary;
+      border-left-color: $primary;
     }
   }
 
