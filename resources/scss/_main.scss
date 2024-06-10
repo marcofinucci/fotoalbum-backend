@@ -1,8 +1,14 @@
 #app-main {
-  margin-top: 3rem;
+  padding: 5rem 3rem;
+  overflow-y: auto;
   flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0%;
+  
+  .my-table {
+    td, th {
+      padding: 2rem;
+      min-width: 200px;
+    }
+  }
 }
 
 .app-guest #app-main {
