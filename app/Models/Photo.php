@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-    use HasFactory;
+  use HasFactory;
+  protected $fillable = ['title', 'slug', 'image', 'description', 'featured'];
 }
