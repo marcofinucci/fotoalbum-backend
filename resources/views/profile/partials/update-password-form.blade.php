@@ -51,7 +51,7 @@
           el.style.display = 'block';
         }
       </script>
-      <p id='status' class=" fs-5 text-muted">{{ __('Saved.') }}</p>
+      <div id='status' class="text-success">{{ __('Saved.') }}</div>
       @endif
     </div>
   </form>

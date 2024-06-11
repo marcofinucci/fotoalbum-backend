@@ -22,10 +22,10 @@ class UpdatePhotoRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'title' => 'required',
-      'image' => 'nullable|image',
-      'description' => 'nullable',
-      'featured' => 'boolean',
+      'title' => 'required|string|unique:photos,title,' . $this->photo->id,
+      'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+      'description' => 'nullable|string|max:500',
+      'featured' => 'string',
     ];
   }
 }

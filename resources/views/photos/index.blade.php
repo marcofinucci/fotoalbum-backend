@@ -6,14 +6,14 @@
   @include('partials.title', ['title' => 'Le tue foto'])
 
   {{-- Table --}}
-  @if($photos)
+  @if($photos->count() > 0)
   <div class="table-responsive">
     <table class="table my-table">
       <thead>
         <tr>
           <th scope="col"></th>
           <th scope="col">Titolo</th>
-          <th scope="col">Slug</th>
+          <th scope="col">Categoria</th>
           <th class="my-table-featured" scope="col">In evidenza</th>
           <th class="my-table-actions" scope="col">Azioni</th>
         </tr>
@@ -22,13 +22,23 @@
         {{-- Photo row --}}
         @foreach ($photos as $photo)
         <tr>
+          {{-- Image --}}
           <td class="my-table-image">
             <div class="my-table-image-wrap">
-              <img class="img-fluid" src="{{$photo->image}}" />
+              @if (Str::startsWith($photo->image, 'http'))
+              <img class="img-fluid" src="{{$photo->image}}" alt="{{$photo->title}}" />
+              @else
+              <img class="img-fluid" src="{{asset('storage/'.$photo->image)}}" alt="{{$photo->title}}" />
+              @endif
             </div>
           </td>
-          <td>{{$photo->title}}</td>
-          <td>{{$photo->slug}}</td>
+          {{-- Title --}}
+          <td><a class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              href="{{route('photos.show', $photo)}}">{{$photo->title}}</a>
+          </td>
+          {{-- Category --}}
+          <td><span class="text-secondary-emphasis">Lorem ipsum</span></td>
+          {{-- Featured --}}
           <td class="my-table-featured">
             @if($photo->featured)
             <i class="bi bi-star-fill"></i>
@@ -36,14 +46,15 @@
             <i class="bi bi-star"></i>
             @endif
           </td>
+          {{-- Actions --}}
           <th class="my-table-actions">
             <a class="btn btn-secondary btn-sm" href="{{route('photos.show', $photo)}}" data-bs-toggle="tooltip"
-              data-bs-title="Guarda la foto">
+              data-bs-title="Guarda foto">
               <i class="bi bi-eye"></i>
             </a>
-            <a class="btn btn-outline-secondary btn-sm" href="{{route('photos.destroy', $photo)}}"
-              data-bs-toggle="tooltip" data-bs-title="Elimina la foto">
-              <i class="bi bi-trash"></i>
+            <a class="btn btn-secondary btn-sm" href="{{route('photos.edit', $photo)}}" data-bs-toggle="tooltip"
+              data-bs-title="Modifica foto">
+              <i class="bi bi-pencil"></i>
             </a>
           </th>
         </tr>
@@ -56,8 +67,10 @@
   {{$photos->links('pagination::bootstrap-5')}}
 
   @else
-  <div>Nessuns photo da mostrare</div>
-  @endif
+  <div>Spiacente, non hai nessuna foto da visualizzare. <a href="{{route('photos.create')}}">Aggiungi una nuova foto</a>
+    per iniziare.</div>
+</div>
+@endif
 
 </div>
 @endsection

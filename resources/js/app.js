@@ -4,6 +4,7 @@ import "~icons/bootstrap-icons.scss";
 import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**"]);
 
+// Bootstrap tooltips
 const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]'
 );

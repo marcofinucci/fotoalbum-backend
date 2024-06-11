@@ -21,7 +21,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
   // Dashboard
   Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
   // Photos
-  Route::resource('/photos', PhotoController::class)->parameters(['photos' => 'photos:slug']);
+  Route::resource('/photos', PhotoController::class);
 });
 
 Route::middleware('auth')->group(function () {

@@ -23,6 +23,17 @@
     </aside>
     {{-- Main --}}
     <main id="app-main">
+      {{-- Message status --}}
+      @if(session('status'))
+      <div class="container">
+        <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
+          <span>{{session('status')}}</span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+      @endif
+
+      {{-- Content --}}
       @yield('content')
     </main>
   </div>
