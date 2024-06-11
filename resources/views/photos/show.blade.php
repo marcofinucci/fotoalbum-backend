@@ -4,7 +4,9 @@
 <div class="container">
   {{-- Title --}}
   @if($photo->featured)
-  <div class="text-primary">In evidenza</div>
+  <div class="text-primary mb-1">
+    <i class="bi bi-star-fill"></i> <span>In evidenza</span>
+  </div>
   @endif
   <h1 class="h2 mb-4">{{ $photo->title }}</h1>
 

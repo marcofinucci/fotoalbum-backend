@@ -1,4 +1,4 @@
-<div class="my-logo">PHOTO ALBUM</div>
+<div class="my-logo text-secondary-emphasis">PHOTO ALBUM</div>
 
 <ul class="nav flex-column my-nav-general">
   <li class="nav-item">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PhotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// All posts
+//http://127.0.0.1:8000/api/photos
+Route::get('photos', [PhotoController::class, 'index']);
+
+// Single post
+//http://127.0.0.1:8000/api/photos/{photo}
+Route::get('photos/{post}', [PhotoController::class, 'show']);
