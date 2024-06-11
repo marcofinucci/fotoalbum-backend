@@ -57,7 +57,7 @@ class PhotoController extends Controller
     // Crea i campi usando il fillable del modello
     $photo = Photo::create($val_data);
 
-    // Reinderizza la rotta alla view show
+    // Reinderizza la view
     return to_route('photos.index')->with('status', 'Foto aggiunta con successo');
   }
 
@@ -108,7 +108,7 @@ class PhotoController extends Controller
     // Aggiorna i campi
     $photo->update($val_data);
 
-    // Reinderizza la rotta alla view edit
+    // Reinderizza la view
     return to_route('photos.index')->with('status', 'Foto modificata con successo');
   }
 
@@ -125,7 +125,7 @@ class PhotoController extends Controller
     // Elimina il post
     $photo->delete();
 
-    // Reinderizza la rotta alla view index
+    // Reinderizza la view
     return to_route('photos.index')->with('status', 'Foto eliminata con successo');
   }
 }
