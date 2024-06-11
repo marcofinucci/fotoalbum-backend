@@ -13,8 +13,8 @@
     {{-- Title --}}
     <div class="mb-5">
       <label for="title" class="form-label">Titolo</label>
-      <input type="text" name="title" id="title" placeholder="Nuovo post" value="{{{old('title', $photo->title)}}}"
-        class="form-control my-input @error('title') is-invalid @enderror" />
+      <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit..."
+        value="{{{old('title', $photo->title)}}}" class="form-control my-input @error('title') is-invalid @enderror" />
       @error('title')
       <div class="invalid-feedback">{{$message}}</div>
       @enderror
@@ -36,6 +36,22 @@
         L'immagine deve avere una dimensione massima di 2MB e di tipo: png, jpg, jpeg.
       </div>
       @error('image')
+      <div class="invalid-feedback">{{$message}}</div>
+      @enderror
+    </div>
+
+    {{-- Category --}}
+    <div class="mb-5">
+      <label for="category_id">Categorie</label>
+      <select name="category_id" id="category_id" class="form-select @error('category_id') is-invalid @enderror">
+        <option disabled selected>Nessuna</option>
+        @foreach ($categories as $category)
+        <option value="{{$category->id}}" {{old('category_id' , $photo->category_id) == $category->id ? 'selected' :
+          ''}}>{{$category->name}}
+        </option>
+        @endforeach
+      </select>
+      @error('category_id')
       <div class="invalid-feedback">{{$message}}</div>
       @enderror
     </div>

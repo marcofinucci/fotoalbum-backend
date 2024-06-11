@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
+use App\Models\Category;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -23,7 +24,8 @@ class PhotoController extends Controller
    */
   public function create()
   {
-    return view('photos.create');
+    $categories = Category::all();
+    return view('photos.create', compact('categories'));
   }
 
   /**
@@ -72,7 +74,8 @@ class PhotoController extends Controller
    */
   public function edit(Photo $photo)
   {
-    return view('photos.edit', compact('photo'));
+    $categories = Category::all();
+    return view('photos.edit', compact('photo', 'categories'));
   }
 
   /**
@@ -106,7 +109,7 @@ class PhotoController extends Controller
     $photo->update($val_data);
 
     // Reinderizza la rotta alla view edit
-    return to_route('photos.show', $photo)->with('status', 'Foto modificata con successo');
+    return to_route('photos.index')->with('status', 'Foto modificata con successo');
   }
 
   /**

@@ -15,9 +15,14 @@
       <span>{{$photo->slug}}</span>
     </div>
     {{-- Categoria --}}
+
     <div>
       <span class="text-secondary-emphasis">Categoria: </span>
-      <span>Lorem ipsum</span>
+      @if ($photo->category)
+      <span>{{ $photo->category->name }}</span>
+      @else
+      <span>Nessuna</span>
+      @endif
     </div>
   </div>
 

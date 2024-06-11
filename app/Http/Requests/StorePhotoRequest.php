@@ -26,6 +26,7 @@ class StorePhotoRequest extends FormRequest
       'image' => 'required|image|mimes:jpeg,png,jpg|max:2048|max:2048',
       'description' => 'nullable|string|max:500',
       'featured' => 'string',
+      'category_id' => 'nullable|exists:categories,id',
     ];
   }
 }

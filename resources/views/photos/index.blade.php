@@ -37,7 +37,13 @@
               href="{{route('photos.show', $photo)}}">{{$photo->title}}</a>
           </td>
           {{-- Category --}}
-          <td><span class="text-secondary-emphasis">Lorem ipsum</span></td>
+          <td>
+            @if ($photo->category)
+            <span class="text-secondary-emphasis">{{ $photo->category->name }}</span>
+            @else
+            <span class="text-secondary-emphasis">Nessuna</span>
+            @endif
+          </td>
           {{-- Featured --}}
           <td class="my-table-featured">
             @if($photo->featured)
