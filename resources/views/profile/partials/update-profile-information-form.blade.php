@@ -20,7 +20,7 @@
         value="{{old('name', $user->name)}}" required autofocus>
       @error('name')
       <span class="invalid-feedback" role="alert">
-        <strong>{{ $errors->get('name')}}</strong>
+        {{ $errors->get('name')}}
       </span>
       @enderror
     </div>
@@ -32,7 +32,7 @@
         autocomplete="username" />
       @error('email')
       <span class="alert alert-danger mt-2" role="alert">
-        <strong>{{ $errors->get('email')}}</strong>
+        {{ $errors->get('email')}}
       </span>
       @enderror
       @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

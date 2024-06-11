@@ -17,7 +17,7 @@
         autocomplete="current-password">
       @error('current_password')
       <span class="invalid-feedback mt-2" role="alert">
-        <strong>{{ $errors->updatePassword->get('current_password') }}</strong>
+        {{ $errors->updatePassword->get('current_password') }}
       </span>
       @enderror
     </div>
@@ -26,7 +26,7 @@
       <input class="mt-1 form-control" type="password" name="password" id="password" autocomplete="new-password">
       @error('password')
       <span class="invalid-feedback mt-2" role="alert">
-        <strong>{{ $errors->updatePassword->get('password')}}</strong>
+        {{ $errors->updatePassword->get('password')}}
       </span>
       @enderror
     </div>
@@ -36,7 +36,7 @@
         autocomplete="new-password">
       @error('password_confirmation')
       <span class="invalid-feedback mt-2" role="alert">
-        <strong>{{ $errors->updatePassword->get('password_confirmation')}}</strong>
+        {{ $errors->updatePassword->get('password_confirmation')}}
       </span>
       @enderror
     </div>

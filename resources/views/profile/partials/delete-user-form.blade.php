@@ -43,7 +43,7 @@
                 placeholder="{{ __('Password') }}" />
               @error('password')
               <span class="invalid-feedback mt-2" role="alert">
-                <strong>{{ $errors->userDeletion->get('password')}}</strong>
+                {{ $errors->userDeletion->get('password')}}
               </span>
               @enderror
               <button type="submit" class="btn btn-danger">

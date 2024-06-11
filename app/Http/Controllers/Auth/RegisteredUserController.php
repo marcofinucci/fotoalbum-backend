@@ -15,37 +15,42 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
-    public function create(): View
-    {
-        return view('auth.register');
+  /**
+   * Display the registration view.
+   */
+  public function create(): View
+  {
+    // Abilita solo se non ci sono utenti registrati
+    if (User::count() > 0) {
+      abort(403);
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+    return view('auth.register');
+  }
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+  /**
+   * Handle an incoming registration request.
+   *
+   * @throws \Illuminate\Validation\ValidationException
+   */
+  public function store(Request $request): RedirectResponse
+  {
+    $request->validate([
+      'name' => ['required', 'string', 'max:255'],
+      'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+      'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    ]);
 
-        event(new Registered($user));
+    $user = User::create([
+      'name' => $request->name,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+    ]);
 
-        Auth::login($user);
+    event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
-    }
+    Auth::login($user);
+
+    return redirect(RouteServiceProvider::HOME);
+  }
 }

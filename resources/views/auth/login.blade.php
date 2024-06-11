@@ -1,3 +1,5 @@
+<?php use App\Models\User; ?>
+
 @extends('layouts.guest')
 
 @section('content')
@@ -20,7 +22,7 @@
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
+                  {{ $message }}
                 </span>
                 @enderror
               </div>
@@ -35,7 +37,7 @@
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
+                  {{ $message }}
                 </span>
                 @enderror
               </div>
@@ -66,6 +68,7 @@
                 </a>
                 @endif
 
+                @if (User::count() == 0)
                 <div class="mt-5">
                   <hr>
                   <span class="text-secondary">{{ __('Don\'t have an account?') }}</span>
@@ -73,6 +76,7 @@
                   {{ __('Register') }}
                 </a>
                 </div>
+                @endif
                 
               </div>
             </div>
