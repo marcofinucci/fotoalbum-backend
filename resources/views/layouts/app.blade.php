@@ -9,7 +9,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   {{-- Title --}}
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Backend | Foto Album</title>
 
   <!-- Usando Vite -->
   @vite(['resources/js/app.js'])

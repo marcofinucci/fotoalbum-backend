@@ -15,7 +15,7 @@ class PhotoSeeder extends Seeder
    */
   public function run(Faker $faker): void
   {
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 50; $i++) {
       $photo = new Photo();
       $photo->title = $faker->words(4, true);
       $photo->slug = Str::slug($photo->title, '-');

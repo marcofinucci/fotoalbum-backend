@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\PhotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,7 @@ Route::get('photos', [PhotoController::class, 'index']);
 // Single post
 //http://127.0.0.1:8000/api/photos/{photo}
 Route::get('photos/{post}', [PhotoController::class, 'show']);
+
+// All categories
+//http://127.0.0.1:8000/api/categories
+Route::get('categories', [CategoryController::class, 'index']);

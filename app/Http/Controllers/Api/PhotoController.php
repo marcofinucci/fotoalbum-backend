@@ -8,8 +8,35 @@ use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
+    // Se la richiesta è di tipo search
+    if ($request->has('search')) {
+      $title = $request->get('title');
+      $category = $request->get('category');
+      $featured = $request->get('featured');
+
+      // Se si sta filtrando per titolo, categoria e per featured
+      if ($category != 'All' && $featured == 'true') {
+        $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->where('featured', 1)->orderByDesc('id')->paginate(10);
+      // Altrimenti se si sta filtrando per titolo e categoria
+      } else if ($category != 'All') {
+        $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->orderByDesc('id')->paginate(10);
+      // Altrimenti se si sta filtrando per titolo e featured
+      } else if ($featured == 'true') {
+        $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('featured', 1)->orderByDesc('id')->paginate(10);
+      // Altrimenti se si sta filtrando per titolo
+      } else {
+        $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->orderByDesc('id')->paginate(10);
+      }
+      
+      return response()->json([
+        'success' => true,
+        'results' => $photos
+      ]);
+    }
+
+    // Altrimenti ritorna tutte le immagini
     return response()->json([
       'success' => true,
       'results' => Photo::with(['category'])->orderByDesc('id')->paginate(10),

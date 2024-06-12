@@ -18,7 +18,7 @@
 <body>
   <div id="app" class="app-guest">
     <main id="app-main">
-      <div class="my-logo text-secondary-emphasis">PHOTO ALBUM</div>
+      <div class="my-logo text-secondary-emphasis">FOTO ALBUM</div>
       @yield('content')
     </main>
   </div>

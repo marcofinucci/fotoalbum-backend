@@ -36,9 +36,9 @@
   {{-- Image --}}
   <div class="mb-5">
     @if (Str::startsWith($photo->image, 'http'))
-    <img class="img-fluid" src="{{$photo->image}}" alt="{{$photo->title}}" />
+    <img class="img-fluid rounded" src="{{$photo->image}}" alt="{{$photo->title}}" />
     @else
-    <img class="img-fluid" src="{{asset('storage/'.$photo->image)}}" alt="{{$photo->title}}" />
+    <img class="img-fluid rounded" src="{{asset('storage/'.$photo->image)}}" alt="{{$photo->title}}" />
     @endif
   </div>
 
