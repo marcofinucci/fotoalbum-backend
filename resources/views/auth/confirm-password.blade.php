@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
   <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-lg-8">
       <div class="card">
         <div class="card-header">{{ __('Confirm Password') }}</div>
 
@@ -14,9 +14,9 @@
             @csrf
 
             <div class="mb-4 row">
-              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+              <label for="password" class="col-lg-4 col-form-label text-lg-right">{{ __('Password') }}</label>
 
-              <div class="col-md-6">
+              <div class="col-lg-6">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                   name="password" required autocomplete="current-password">
 
@@ -29,7 +29,7 @@
             </div>
 
             <div class="mb-4 row mb-0">
-              <div class="col-md-8 offset-md-4">
+              <div class="col-lg-8 offset-lg-4">
                 <button type="submit" class="btn btn-primary">
                   {{ __('Confirm Password') }}
                 </button>

@@ -74,10 +74,10 @@
     </div>
 
     {{-- Actions --}}
-    <div>
+    <div class="d-flex flex-column align-items-start d-lg-block">
       <a class="btn btn-secondary" href="{{route('photos.index')}}">Indietro</a>
-      <button class="btn btn-primary" type="submit">Salva modifiche</button>
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      <button class="btn btn-primary mt-2 mt-lg-0" type="submit">Salva modifiche</button>
+      <button type="button" class="btn btn-danger mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#deleteModal">
         Elimina foto
       </button>
     </div>

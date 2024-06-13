@@ -11,9 +11,9 @@
     <table class="table my-table">
       <thead>
         <tr>
-          <th scope="col"></th>
-          <th scope="col">Titolo</th>
-          <th scope="col">Categoria</th>
+          <th class="my-table-image" scope="col"></th>
+          <th class="my-table-title" scope="col">Titolo</th>
+          <th class="my-table-category" scope="col">Categoria</th>
           <th class="my-table-featured" scope="col">In evidenza</th>
           <th class="my-table-actions" scope="col">Azioni</th>
         </tr>
@@ -26,18 +26,18 @@
           <td class="my-table-image">
             <div class="my-table-image-wrap">
               @if (Str::startsWith($photo->image, 'http'))
-              <img class="img-fluid rounded" src="{{$photo->image}}" alt="{{$photo->title}}" />
+              <img class="img-fluid rounded" src="{{$photo->image}}" />
               @else
-              <img class="img-fluid rounded" src="{{asset('storage/'.$photo->image)}}" alt="{{$photo->title}}" />
+              <img class="img-fluid rounded" src="{{asset('storage/'.$photo->image)}}" />
               @endif
             </div>
           </td>
           {{-- Title --}}
-          <td><a class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          <td class="my-table-title"><a class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               href="{{route('photos.show', $photo)}}">{{$photo->title}}</a>
           </td>
           {{-- Category --}}
-          <td>
+          <td class="my-table-category">
             @if ($photo->category)
             <span class="text-secondary-emphasis">{{ $photo->category->name }}</span>
             @else

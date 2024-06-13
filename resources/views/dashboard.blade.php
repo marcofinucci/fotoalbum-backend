@@ -8,8 +8,10 @@
   {{-- Actions --}}
   <div>
     <h2 class="fs-4 fw-normal mb-4">Ciao {{ Auth::user()->name }}, cosa vuoi fare oggi?</h2>
-    <a href="{{ route('photos.create') }}" class="btn btn-primary">Inserisci una foto</a>
-    <a href="{{ route('photos.index') }}" class=" btn btn-secondary">Vista le tue foto</a>
+    <div class="d-flex flex-column align-items-start d-lg-block">
+      <a href="{{ route('photos.create') }}" class="btn btn-primary">Inserisci una foto</a>
+      <a href="{{ route('photos.index') }}" class=" btn btn-secondary mt-2 mt-lg-0">Vista le tue foto</a>
+    </div>
   </div>
 
   {{-- Profile --}}

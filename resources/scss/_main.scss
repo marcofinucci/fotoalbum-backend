@@ -1,53 +1,86 @@
 #app-main {
-    padding: 5rem 0;
-    overflow-y: auto;
-    flex-grow: 1;
+  overflow-y: auto;
+  flex-grow: 1;
 
-    @include media-breakpoint-up(lg) {
-        padding: 5rem 3rem;
-    }
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 3rem;
+  }
+
+  .table-responsive {
+    margin-bottom: 2rem;
 
     .my-table {
-        margin-bottom: 2rem;
+      margin-bottom: 0;
 
-        td,
-        th {
-            padding: 1rem;
-            vertical-align: middle;
+      td,
+      th {
+        padding: 0.5rem 1rem;
+        vertical-align: middle;
+        min-width: 7.5rem;
+        font-size: 1rem;
+
+        @include media-breakpoint-up(lg) {
+          padding: 1rem;
+        }
+      }
+
+      th {
+        font-size: 0.875rem;
+      }
+
+      .my-table-image {
+        width: 80px;
+        min-width: 80px;
+
+        @include media-breakpoint-up(lg) {
+          width: 120px;
+          min-width: 120px;
         }
 
-        th {
-            font-size: 0.875rem;
+        .my-table-image-wrap {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
+      }
 
-        .my-table-image {
-            width: 80px;
+      .my-table-title {
+        min-width: 10rem;
+      }
 
-            .my-table-image-wrap {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                overflow: hidden;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
+      .my-table-featured {
+        text-align: center;
+      }
 
-        .my-table-featured {
-            text-align: center;
-        }
-
-        .my-table-actions {
-            text-align: center;
-        }
+      .my-table-actions {
+        text-align: center;
+      }
     }
+  }
 }
 
 .app-guest #app-main {
-    .my-logo {
-        text-align: center;
-        font-size: 1.5rem;
-    }
+  padding: 5rem 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 3rem;
+  }
+
+  .my-logo {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+.app-admin #app-main {
+  padding: 2rem 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 5rem 3rem;
+  }
 }

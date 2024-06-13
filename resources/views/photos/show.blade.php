@@ -42,10 +42,10 @@
   </div>
 
   {{-- Actions --}}
-  <div>
+  <div class="d-flex flex-column align-items-start d-lg-block">
     <a class="btn btn-secondary" href="{{route('photos.index')}}">Indietro</a>
-    <a class="btn btn-primary" href="{{route('photos.edit', $photo)}}">Modifica foto</a>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+    <a class="btn btn-primary mt-2 mt-lg-0" href="{{route('photos.edit', $photo)}}">Modifica foto</a>
+    <button type="button" class="btn btn-danger mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#deleteModal">
       Elimina foto
     </button>
   </div>

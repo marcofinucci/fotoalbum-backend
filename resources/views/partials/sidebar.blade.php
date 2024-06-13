@@ -6,7 +6,7 @@
 </button>
 
 {{-- Desktop --}}
-<div class="d-none d-lg-block">
+<div class="d-none d-lg-flex flex-column h-100">
   @include('partials.nav')
 </div>
 
