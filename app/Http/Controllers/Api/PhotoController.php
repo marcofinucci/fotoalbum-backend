@@ -17,10 +17,10 @@ class PhotoController extends Controller
       $featured = $request->get('featured');
 
       // Se si sta filtrando per titolo, categoria e per featured
-      if ($category != 'All' && $featured == 'true') {
+      if ($category != 'all' && $featured == 'true') {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->where('featured', 1)->orderByDesc('id')->paginate(10);
       // Altrimenti se si sta filtrando per titolo e categoria
-      } else if ($category != 'All') {
+      } else if ($category != 'all') {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->orderByDesc('id')->paginate(10);
       // Altrimenti se si sta filtrando per titolo e featured
       } else if ($featured == 'true') {
