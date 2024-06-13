@@ -17,7 +17,6 @@
       <span>{{$photo->slug}}</span>
     </div>
     {{-- Categoria --}}
-
     <div>
       <span class="text-secondary-emphasis">Categoria: </span>
       @if ($photo->category)
