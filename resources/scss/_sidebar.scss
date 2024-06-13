@@ -1,31 +1,41 @@
+#offcanvasNavbar {
+  background-color: $body-secondary-bg-dark;
+}
+
 #app-sidebar {
-  padding: 2rem;
+  padding: 1rem;
   background-color: $body-secondary-bg-dark;
   display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  min-width: 300px;
-  
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: column;
+    overflow-y: auto;
+    min-width: 300px;
+    padding: 2rem;
+  }
+
   .nav {
     .nav-link {
       color: $body-color-dark;
-      padding-top: .75rem;
-      padding-bottom: .75rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
       display: flex;
       align-items: center;
       border-left: 4px solid transparent;
     }
 
     i {
-      margin-right: .75rem;
-      font-size: 1.125rem
+      margin-right: 0.75rem;
+      font-size: 1.125rem;
     }
 
-    .nav-link:hover, .nav-link:focus {
+    .nav-link:hover,
+    .nav-link:focus {
       border-left-color: $primary;
     }
 
-    .nav-link.active, .show > .nav-link {
+    .nav-link.active,
+    .show > .nav-link {
       color: $body-emphasis-color-dark;
       border-left-color: $primary;
     }
@@ -34,18 +44,25 @@
   .my-nav-general {
     margin-bottom: 4rem;
     border-top: 1px solid $border-color-dark;
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: 1rem;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
   }
 
   .my-profile {
     margin-top: auto;
-    padding-top: 2rem;
+    padding-top: 1rem;
     border-top: 1px solid $border-color-dark;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 2rem;
+    }
   }
 
   .my-nav-settings {
     margin-top: 1rem;
   }
 }
-

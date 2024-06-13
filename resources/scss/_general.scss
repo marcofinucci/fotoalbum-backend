@@ -15,8 +15,8 @@
   background: $gray-700;
 }
 
-
-html, body {
+html,
+body {
   width: 100svw;
   height: 100svh;
   overflow: hidden;
@@ -24,11 +24,19 @@ html, body {
 
 #app {
   height: 100svh;
-  display: flex;
 }
 
 .my-logo {
   font-weight: 600;
   font-size: 1.125rem;
-  letter-spacing: .0625rem;
+  letter-spacing: 0.0625rem;
+}
+
+.app-admin {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+  }
 }
