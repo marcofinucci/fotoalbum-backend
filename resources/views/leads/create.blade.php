@@ -5,7 +5,6 @@
   {{-- Title --}}
   @include('partials.title', ['title' => 'Contatta lo sviluppatore'])
 
-
   {{-- Form --}}
   <form action="{{route('leads.store')}}" method="post" enctype="multipart/form-data">
     @csrf
