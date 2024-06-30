@@ -10,7 +10,7 @@
   @endif
   <h1 class="h2 mb-4">{{ $photo->title }}</h1>
 
-  <div class="mb-5">
+  <div class="mb-4">
     {{-- Slug --}}
     <div>
       <span class="text-secondary-emphasis">Slug: </span>
@@ -29,11 +29,11 @@
 
   {{-- Description --}}
   @if ($photo->description)
-  <div class="fs-4 mb-5">{{ $photo->description }}</div>
+  <div class="fs-4 mb-4">{{ $photo->description }}</div>
   @endif
 
   {{-- Image --}}
-  <div class="mb-5">
+  <div class="mb-4">
     @if (Str::startsWith($photo->image, 'http'))
     <img class="img-fluid rounded" src="{{$photo->image}}" alt="{{$photo->title}}" />
     @else

@@ -10,7 +10,7 @@
     @csrf
 
     {{-- Name --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="name" class="form-label">Nome</label>
       <input type="text" name="name" id="name" value="{{old('name', Auth::user()->name)}}"
         class="form-control @error('name') is-invalid @enderror" />
@@ -20,7 +20,7 @@
     </div>
 
     {{-- Email --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="email" class="form-label">Email</label>
       <input type="email" name="email" id="email" value="{{old('email', Auth::user()->email)}}"
         class="form-control @error('email') is-invalid @enderror" />
@@ -30,7 +30,7 @@
     </div>
 
     {{-- Message --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="message" class="form-label">Messaggio</label>
       <textarea name="message" id="message" class="form-control @error('message') is-invalid @enderror"
         rows="5" />{{old('message')}}</textarea>

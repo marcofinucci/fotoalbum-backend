@@ -11,7 +11,7 @@
     @method('PUT')
 
     {{-- Title --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="title" class="form-label">Titolo</label>
       <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit..."
         value="{{{old('title', $photo->title)}}}" class="form-control @error('title') is-invalid @enderror" />
@@ -21,7 +21,7 @@
     </div>
 
     {{-- Image --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <div class="mb-4">
         @if (Str::startsWith($photo->image, 'http'))
         <img class="img-fluid rounded" src="{{$photo->image}}" alt="{{$photo->title}}" />
@@ -41,7 +41,7 @@
     </div>
 
     {{-- Category --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="category_id">Categorie</label>
       <select name="category_id" id="category_id" class="form-select @error('category_id') is-invalid @enderror">
         <option disabled selected>Nessuna</option>
@@ -57,14 +57,14 @@
     </div>
 
     {{-- Featured --}}
-    <div class="form-check form-switch mb-5">
+    <div class="form-check form-switch mb-4">
       <input class="form-check-input" type="checkbox" role="switch" id="featured" name="featured" {{old('featured',
         $photo->featured) ? 'checked' : ''}}>
       <label class="form-check-label" for="featured">In evidenza</label>
     </div>
 
     {{-- Description --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="description" class="form-label">Descrizione</label>
       <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
         rows="5" />{{old('description', $photo->description)}}</textarea>

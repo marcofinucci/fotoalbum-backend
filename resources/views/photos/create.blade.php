@@ -10,7 +10,7 @@
     @csrf
 
     {{-- Title --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="title" class="form-label">Titolo</label>
       <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit..." value="{{old('title')}}"
         class="form-control @error('title') is-invalid @enderror" />
@@ -20,7 +20,7 @@
     </div>
 
     {{-- Image --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="image" class="form-label">Immagine</label>
       <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image"
         aria-describedby="imageHelpBlock" />
@@ -33,7 +33,7 @@
     </div>
 
     {{-- Category --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="category_id">Categorie</label>
       <select name="category_id" id="category_id" class="form-select @error('category_id') is-invalid @enderror">
         <option disabled selected>Nessuna</option>
@@ -48,13 +48,13 @@
     </div>
 
     {{-- Featured --}}
-    <div class="form-check form-switch mb-5">
+    <div class="form-check form-switch mb-4">
       <input class="form-check-input" type="checkbox" role="switch" id="featured" name="featured">
       <label class="form-check-label" for="featured">In evidenza</label>
     </div>
 
     {{-- Description --}}
-    <div class="mb-5">
+    <div class="mb-4">
       <label for="description" class="form-label">Descrizione</label>
       <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
         rows="5" />{{old('description')}}</textarea>
