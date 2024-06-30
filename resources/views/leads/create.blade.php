@@ -13,7 +13,7 @@
     {{-- Name --}}
     <div class="mb-5">
       <label for="name" class="form-label">Nome</label>
-      <input type="text" name="name" id="name" value="{{old('name')}}"
+      <input type="text" name="name" id="name" value="{{old('name', Auth::user()->name)}}"
         class="form-control my-input @error('name') is-invalid @enderror" />
       @error('name')
       <div class="invalid-feedback">{{$message}}</div>
@@ -23,7 +23,7 @@
     {{-- Email --}}
     <div class="mb-5">
       <label for="email" class="form-label">Email</label>
-      <input type="email" name="email" id="email" value="{{old('email')}}"
+      <input type="email" name="email" id="email" value="{{old('email', Auth::user()->email)}}"
         class="form-control my-input @error('email') is-invalid @enderror" />
       @error('email')
       <div class="invalid-feedback">{{$message}}</div>
