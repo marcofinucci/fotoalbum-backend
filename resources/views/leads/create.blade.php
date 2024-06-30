@@ -42,6 +42,5 @@
     {{-- Actions --}}
     <button class="btn btn-primary" type="submit">Invia messaggio</button>
   </form>
-  
 </div>
 @endsection
