@@ -3,6 +3,7 @@
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
   Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
   // Photos
   Route::resource('/photos', PhotoController::class);
+  // Leads
+  Route::get('/contacts', [LeadController::class, 'create'])->name('leads.create');
+  Route::post('/contacts', [LeadController::class, 'store'])->name('leads.store');
 });
 
 Route::middleware('auth')->group(function () {

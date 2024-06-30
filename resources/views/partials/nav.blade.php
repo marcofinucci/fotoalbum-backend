@@ -29,6 +29,16 @@
       <span>Aggiungi foto</span>
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('leads.create') ? 'active' : ''}}" href="{{ route('leads.create')}}">
+      @if(request()->routeIs('leads.create'))
+      <i class="bi bi-chat-dots-fill"></i>
+      @else
+      <i class="bi bi-chat-dots"></i>
+      @endif
+      <span>Assistenza tecnica</span>
+    </a>
+  </li>
 </ul>
 
 <div class="my-profile small">Benvenuto <strong>{{ Auth::user()->name }}</strong></div>
