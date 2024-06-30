@@ -13,7 +13,7 @@
     <div class="mb-5">
       <label for="title" class="form-label">Titolo</label>
       <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit..." value="{{old('title')}}"
-        class="form-control my-input @error('title') is-invalid @enderror" />
+        class="form-control @error('title') is-invalid @enderror" />
       @error('title')
       <div class="invalid-feedback">{{$message}}</div>
       @enderror
