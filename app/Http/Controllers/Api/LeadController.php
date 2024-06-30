@@ -25,7 +25,7 @@ class LeadController extends Controller
       return response()->json([
         'success' => false,
         'error' => $validator->errors()
-      ], 401);
+      ]);
     }
 
     // Crea la Lead
@@ -37,6 +37,6 @@ class LeadController extends Controller
     // Restuisce un messaggio di successo
     return response()->json([
       'success' => true
-    ], 200);
+    ]);
   }
 }

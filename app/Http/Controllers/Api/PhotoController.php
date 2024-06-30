@@ -19,17 +19,17 @@ class PhotoController extends Controller
       // Se si sta filtrando per titolo, categoria e per featured
       if ($category != 'all' && $featured == 'true') {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->where('featured', 1)->orderByDesc('id')->paginate(10);
-      // Altrimenti se si sta filtrando per titolo e categoria
+        // Altrimenti se si sta filtrando per titolo e categoria
       } else if ($category != 'all') {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('category_id', $category)->orderByDesc('id')->paginate(10);
-      // Altrimenti se si sta filtrando per titolo e featured
+        // Altrimenti se si sta filtrando per titolo e featured
       } else if ($featured == 'true') {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->where('featured', 1)->orderByDesc('id')->paginate(10);
-      // Altrimenti se si sta filtrando per titolo
+        // Altrimenti se si sta filtrando per titolo
       } else {
         $photos = Photo::with(['category'])->where('title', 'LIKE', "%$title%")->orderByDesc('id')->paginate(10);
       }
-      
+
       return response()->json([
         'success' => true,
         'results' => $photos
@@ -56,7 +56,7 @@ class PhotoController extends Controller
       return response()->json([
         'success' => false,
         'results' => 'Photo not found'
-      ], 404);
+      ]);
     }
   }
 }

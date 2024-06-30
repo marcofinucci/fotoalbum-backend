@@ -1,12 +1,12 @@
 <x-mail::message>
-# Introduction
+# Hai ricevuto un nuovo messaggio
 
-The body of your message.
+Nome: {{ $lead->name }}
 
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
+Email: {{ $lead->email }}
 
-Thanks,<br>
-{{ config('app.name') }}
+Messaggio: {{ $lead->message }}
+
+---
+Messsaggio inviato da {{ config('app.name') }}
 </x-mail::message>
